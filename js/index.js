@@ -48,14 +48,4 @@ button.addEventListener('click', async (event)=>{
 }
 )
 
-// button.addEventListener('click',(event)=>{
-//     event.preventDefault()
-//     findPokemon(PokemonName.value),
-//     createStructure()
-//     console.log(fetchedPokemon)
-//     addData(fetchedPokemon.sprites.other.dream_world.front_default,'bulba','planta' ) 
-    
-    
-    
-// }
-// )
+
