@@ -32,8 +32,8 @@ function addData(father, img, name, type1, type2, hp, atk) {
 
     lastPokemon.children[0].src = `${img}`
 
-    lastPokemon.children[1].textContent = `nome: ${name}`
-    lastPokemon.children[2].textContent = `tipo: ${type1} ${type2}`
+    lastPokemon.children[1].textContent = `Nome: ${name}`
+    lastPokemon.children[2].textContent = `Tipo: ${type1} ${type2}`
 
     selectedPokemon.push(
         {

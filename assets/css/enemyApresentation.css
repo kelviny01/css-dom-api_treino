@@ -6,4 +6,13 @@
     margin-bottom: 2rem;
     padding-bottom: 8px;
     text-transform: uppercase;
+    color: var(--color-white);
+}
+
+.enemyApresentation__botao {
+    border: none;
+    padding: 9px 60px;
+    margin-bottom: 0.8rem;
+    border-radius: 30px;
+    cursor: pointer;
 }
