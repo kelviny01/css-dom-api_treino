@@ -1,0 +1,9 @@
+.enemyApresentation__text{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    margin-bottom: 2rem;
+    padding-bottom: 8px;
+    text-transform: uppercase;
+}

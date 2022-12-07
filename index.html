@@ -1,29 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./assets/css/selectTeam.css ">
+    <link rel="stylesheet" href="./assets/css/enemyApresentation.css">
     <title>teste api</title>
 </head>
+
 <body>
     <header>
-        <div class="headerContainer">
+        <!-- <div class="headerContainer">
             <h1 class="headerContainer__title"> Monte o seu time pokemon! </h1>
-        </div >
+        </div > -->
 
     </header>
     <main>
 
-        <section class="createTeamContainer">
+        <section class="enemyApresentation">
+            <p class="enemyApresentation__text">esse será o pokemon que você irá enfrentar</p>
+            <button class="enemyApresentation__botao"> continuar</button>
+        </section>
 
-            <p class="createTeamContainer__text"> qual o pokemon que deseja adicionar?</p>
+        <section class="createTeamContainer none">
+
+            <p class="createTeamContainer__text"> esse será o pokemon que você irá enfrentar</p>
+
             <input type="text" class="createTeamContainer__input">
             <button class="createTeamContainer__button">Buscar</button>
             <div class="createTeamContainer__team">
-                 
-                </div>
+
+            </div>
             </div>
 
 
@@ -31,8 +40,9 @@
 
     </main>
     <footer>
-       <p>criado por Edson Gabryel para treinar requisição em api</p>
     </footer>
-    <script src="./js/index.js"></script>
+    <script src="./assets/js/selectTeam.js"></script>
+    <script src="./assets/js/enemyApresentation.js"></script>
 </body>
+
 </html>
