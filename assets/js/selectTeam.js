@@ -50,7 +50,6 @@ button.addEventListener('click', async (event) => {
     let fetchedPokemon = await findPokemon(PokemonName.value)
     if (PokemonName.value != '') {
         createStructure(pokemonTeam)
-        console.log(fetchedPokemon)
         if (pokemonTeam.children.length <= 4) {
             if (fetchedPokemon.types.length < 2) {
                 addData(pokemonTeam,fetchedPokemon.sprites.other.dream_world.front_default, fetchedPokemon.name,
@@ -64,6 +63,12 @@ button.addEventListener('click', async (event) => {
             }
         }
     }
+    let buttonContinue = alyPokemon.appendChild(document.createElement('button'))
+    buttonContinue.textContent='continue';
+    buttonContinue.addEventListener('click',()=>{
+        alert('é por ai')
+    })
+
 }
 )
 
