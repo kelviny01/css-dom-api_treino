@@ -9,8 +9,8 @@ async function createEnemy() {
         fetchedPokemon.types[0].type.name, '',
         fetchedPokemon.stats[0].base_stat, fetchedPokemon.stats[1].base_stat) 
 
-        addBattleDatas( fetchedPokemon.name, fetchedPokemon.sprites.other.dream_world.front_default,
-          fetchedPokemon.types[0].type.name,
+        addBattleDatas( fetchedPokemon.name, 
+          fetchedPokemon.sprites.other.dream_world.front_default,
           fetchedPokemon.stats[0].base_stat,
            fetchedPokemon.stats[1].base_stat);
         employEnemy();    

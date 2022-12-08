@@ -32,7 +32,9 @@ function addSprite(father, img, name, type1, type2) {
     let lastPokemon = father.children[father.children.length - 1]
     lastPokemon.children[0].src = `${img}`
     lastPokemon.children[1].textContent = `Nome: ${name}`
-    lastPokemon.children[2].textContent = `Tipo: ${type1} ${type2}`
+    if (lastPokemon.children[2].textContent = '') { } else {
+        lastPokemon.children[2].textContent = `Tipo: ${type1} ${type2}`
+    }
 }
 
 function addBattleDatas(name, img, hp, atk) {
@@ -70,10 +72,11 @@ button.addEventListener('click', async (event) => {
     }
     if (PokemonName.value != '') {
         alyPokemon.children[0].textContent = 'o pokemon selecionado foi'
-         addBattleDatas( fetchedPokemon.name, fetchedPokemon.sprites.other.dream_world.front_default,
-            fetchedPokemon.types[0].type.name,
+        addBattleDatas(
+            fetchedPokemon.name,
+            fetchedPokemon.sprites.other.dream_world.front_default,
             fetchedPokemon.stats[0].base_stat,
-             fetchedPokemon.stats[1].base_stat);
+            fetchedPokemon.stats[1].base_stat);
 
         alyPokemon.children[2].remove()
         alyPokemon.children[1].remove()
@@ -85,6 +88,7 @@ button.addEventListener('click', async (event) => {
             alyPokemon.classList.add('none')
             battlefield.classList.remove('none')
             employAlly()
+
         })
     }
 
