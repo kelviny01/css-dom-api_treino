@@ -1,15 +1,8 @@
 :root{
     --color-blue:rgb(130, 215, 230);
     --color-white: #fff;
+    --font-piaxada: 'Press Start 2P', cursive;
 }
-
-/* body {
-    background: rgba(0 0 0 / 0.6) url(../549808.png);
-    background-blend-mode: darken;
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: ;
-} */
 
 #display {
     display: flex;
@@ -19,9 +12,15 @@
     height: 100vh;
 }
 
-*{margin: 0;
+*{  margin: 0;
     padding: 0;
-font-size: 16px;
+    font-size: 16px;
+    font-family: var(--font-piaxada);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
 }
 
 .headerContainer{
@@ -48,13 +47,14 @@ font-size: 16px;
 }
 
 .createTeamContainer__text{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 700;
     font-size: 25px;
     margin-bottom: 2rem;
     padding-bottom: 8px;
     text-transform: uppercase;
+    line-height: 1.7;
 }
+
 .createTeamContainer__input{
     border-radius: 20px;
     padding-left: 5px;
@@ -63,7 +63,13 @@ font-size: 16px;
     text-transform: uppercase;
     font-weight: 700;
     outline: none;
+    transition: 0.4s ease-out;
 }
+
+.createTeamContainer__input:hover {
+    transform: scale(1.1);
+}
+
 .createTeamContainer__button{
     padding: 8px 20px;
     border-radius: 30px;
@@ -95,10 +101,6 @@ font-size: 16px;
 
 .createTeamContainer__img:hover {
     transform: translateY(1rem);
-}
-
-.createTeamContainer__team {
-
 }
 
 .createTeamContainer__pokemon {
@@ -138,3 +140,16 @@ font-size: 16px;
     border-radius: 25px;
     box-shadow: 0px 5px 4px rgba(0 0 0 / 0.2);
 }
+
+/* BATTLE_FIELD */
+
+progress {
+    border: none;
+    width: 400px;
+    height: 60px;
+    background: crimson;
+  }
+
+  progress::-webkit-progress-bar {
+    background: lightgreen;
+  }
