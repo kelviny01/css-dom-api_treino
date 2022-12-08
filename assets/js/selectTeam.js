@@ -3,6 +3,7 @@ let pokemonTeam = document.querySelector('.createTeamContainer__team');
 let enemyPokemon = document.querySelector('.enemyApresentation');
 let PokemonName = document.querySelector('.createTeamContainer__input');
 let button = document.querySelector('.createTeamContainer__button');
+let battlefield = document.querySelector('.battlefield');
 let selectedPokemon = []
 
 async function findPokemon(pokemon) {
@@ -27,15 +28,16 @@ function createStructure(father) {
     pokemonTp.classList.add('createTeamContainer__type')
 
 }
-
-function addData(father, img, name, type1, type2, hp, atk) {
+function addSprite(father, img, name, type1, type2) {
     let lastPokemon = father.children[father.children.length - 1]
-
     lastPokemon.children[0].src = `${img}`
-
     lastPokemon.children[1].textContent = `Nome: ${name}`
-    lastPokemon.children[2].textContent = `Tipo: ${type1} ${type2}`
+    if (lastPokemon.children[2].textContent = '') { } else {
+        lastPokemon.children[2].textContent = `Tipo: ${type1} ${type2}`
+    }
+}
 
+function addBattleDatas(name, img, hp, atk) {
     selectedPokemon.push(
         {
             "name": name,
@@ -47,25 +49,34 @@ function addData(father, img, name, type1, type2, hp, atk) {
 }
 
 button.addEventListener('click', async (event) => {
+
     event.preventDefault()
     let fetchedPokemon = await findPokemon(PokemonName.value)
+
+    await console.log(fetchedPokemon)
+
     if (PokemonName.value != '') {
         createStructure(pokemonTeam)
-        if (pokemonTeam.children.length <= 4) {
-            if (fetchedPokemon.types.length < 2) {
-                addData(pokemonTeam, fetchedPokemon.sprites.other.dream_world.front_default, fetchedPokemon.name,
-                    fetchedPokemon.types[0].type.name, '',
-                    fetchedPokemon.stats[0].base_stat, fetchedPokemon.stats[1].base_stat)
-            }
-            else {
-                addData(pokemonTeam, fetchedPokemon.sprites.other.dream_world.front_default, fetchedPokemon.name,
-                    fetchedPokemon.types[0].type.name, fetchedPokemon.types[1].type.name,
-                    fetchedPokemon.stats[0].base_stat, fetchedPokemon.stats[1].base_stat)
-            }
+
+        if (fetchedPokemon.types.length < 2) {
+            addSprite(pokemonTeam, fetchedPokemon.sprites.other.dream_world.front_default, fetchedPokemon.name,
+                fetchedPokemon.types[0].type.name, '',
+            )
         }
+        else {
+            addSprite(pokemonTeam, fetchedPokemon.sprites.other.dream_world.front_default, fetchedPokemon.name,
+                fetchedPokemon.types[0].type.name, fetchedPokemon.types[1].type.name,
+            )
+        }
+
     }
     if (PokemonName.value != '') {
         alyPokemon.children[0].textContent = 'o pokemon selecionado foi'
+        addBattleDatas(
+            fetchedPokemon.name,
+            fetchedPokemon.sprites.other.dream_world.front_default,
+            fetchedPokemon.stats[0].base_stat,
+            fetchedPokemon.stats[1].base_stat);
 
         alyPokemon.children[2].remove()
         alyPokemon.children[1].remove()
@@ -75,6 +86,9 @@ button.addEventListener('click', async (event) => {
         buttonContinue.addEventListener('click', () => {
 
             alyPokemon.classList.add('none')
+            battlefield.classList.remove('none')
+            employAlly()
+
         })
     }
 
