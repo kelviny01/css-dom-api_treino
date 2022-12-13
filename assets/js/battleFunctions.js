@@ -97,7 +97,7 @@ buttonOfAttack.addEventListener('click', (event) => {
 
             priorityAlly = 0
             priorityEnemy = 0
-            
+             
             attack(selectedPokemon[1].atk, enemyHp)
             if (enemyHp <= 0) {
                 console.log('o  pokemon inimigo foi derrotado')
