@@ -230,9 +230,3 @@ textarea {
 }
 
 /* CHILDS POKEMON */
-
-.createTeamContainer__pokemon {
-    position: relative;
-    bottom: -7rem;
-    left: -12rem;
-}
