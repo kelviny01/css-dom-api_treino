@@ -128,6 +128,7 @@ body {
 /* MODIFIE */
 
 .container {
+    position: relative;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -143,13 +144,98 @@ body {
 
 /* BATTLE_FIELD */
 
+.battlefield {
+    background-image: url(../img/qgOjR1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 100%;
+    border-radius: 25px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.battlefield .createTeamContainer__pokemon:first-child {
+    position: absolute;
+    left: 10rem;
+}
+
+/* BARRA DE VIDA */
+
 progress {
     border: none;
     width: 400px;
-    height: 60px;
-    background: crimson;
+    height: 30px;
+    margin: 0.9rem 0;
+    
   }
 
+.battlefield__healthyBar-1 {
+    border-radius: 10px;
+    position: relative;
+    left: -13rem;
+}
+
+.battlefield__healthyBar-2 {
+    position: relative;
+    bottom: -24rem;
+    right: -13rem;
+    z-index: 1;
+} 
+
   progress::-webkit-progress-bar {
-    background: lightgreen;
+    /* background-color: #00ff4099; */
+    background-color: #212121;
+    border-radius: 10px;
   }
+
+
+/* BUTTONS GAME */
+
+.battlefield__buttons {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    gap: 0.5rem;
+    text-align: center;
+}
+
+.battlefield__buttons > .batlefield__action {
+    padding: 3px 30px;
+    border: none;
+    transition: 0.4s ease-out all;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.battlefield__buttons > .batlefield__action:hover {
+    transform: scale(1.4);
+}
+
+.area__text {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+}
+
+textarea {
+    resize: none;
+    padding: 3px 300px;
+    border-radius: 0px 0px 0px 20px;
+    background-color: rgba(255, 255, 255, .8);
+    border: 10px double #000;
+}
+
+/* CHILDS POKEMON */
+
+.createTeamContainer__pokemon {
+}
+
+.createTeamContainer__pokemon {
+    position: relative;
+    bottom: -7rem;
+    left: -12rem;
+}
