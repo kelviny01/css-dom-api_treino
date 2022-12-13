@@ -8,10 +8,13 @@
     <link rel="stylesheet" href="./assets/css/selectTeam.css ">
     <link rel="stylesheet" href="./assets/css/enemyApresentation.css">
     <title>teste api</title>
+
+    <!-- Link Font Press Start 2P -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 
-<body>
-    <main>
+<body id="display">
+    <main class="container">
 
         <section class="enemyApresentation">
             <p class="enemyApresentation__text">esse será o pokemon que você irá enfrentar</p>
@@ -20,7 +23,7 @@
 
         <section class="createTeamContainer none">
 
-            <p class="createTeamContainer__text"> esse será o pokemon que você irá enfrentar</p>
+            <p class="createTeamContainer__text"> selecione o pokemon que desejá usar!</p>
 
             <input type="text" class="createTeamContainer__input">
             <button class="createTeamContainer__button">Buscar</button>
@@ -32,16 +35,32 @@
 
         </section>
 
-        <section class="battlefield">
-
-
+        <section class="battlefield none">
+            <progress class="battlefield__healthyBar-1" value="50" max="100">50%</progress>
+            <progress class="battlefield__healthyBar-2" value="30" max="100">30%</progress>
+            <div class="battlefield__buttons">
+                <button class="batlefield__action-attack">Ataque</button>
+                <button class="batlefield__action-defense">Defesa</button>
+                <button class="batlefield__action-dodge">Esquiva</button>
+            </div>
+            <div class="area__text">
+                <textarea disabled name="" id="" cols="20" rows="5" class="area">
+                    PIKACHU: 100% OF ATACK for VILAN
+                </textarea>
+            </div>
         </section>
 
     </main>
     <footer>
+        <!-- <progress value="70" max="100">70 %</progress> -->
+        <div class="battle">
+            
+        </div>
     </footer>
     <script src="./assets/js/selectTeam.js"></script>
     <script src="./assets/js/enemyApresentation.js"></script>
+    <script src="./assets/js/battlefield.js"></script>
+    <script src="./assets/js/battleFunctions.js"></script>
 </body>
 
 </html>
