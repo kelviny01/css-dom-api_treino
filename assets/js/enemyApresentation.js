@@ -2,7 +2,7 @@ let continueButton= document.querySelector('.enemyApresentation__botao')
 
 async function createEnemy() {
 
-    let fetchedPokemon = await  findPokemon('pikachu');
+    let fetchedPokemon = await  findPokemon('mewtwo');
   console.log(fetchedPokemon)
     createStructure(enemyPokemon);
     addSprite(enemyPokemon,fetchedPokemon.sprites.other.dream_world.front_default, fetchedPokemon.name,
@@ -13,7 +13,8 @@ async function createEnemy() {
           fetchedPokemon.sprites.other.dream_world.front_default,
           fetchedPokemon.stats[0].base_stat,
            fetchedPokemon.stats[1].base_stat);
-        employEnemy();    
+        employEnemy();  
+        enemyHp= selectedPokemon[0].hp*2
            
 }
 createEnemy();

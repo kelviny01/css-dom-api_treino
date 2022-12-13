@@ -27,6 +27,8 @@ function createStructure(father) {
     pokemonTp = pokemon.appendChild(document.createElement('div'))
     pokemonTp.classList.add('createTeamContainer__type')
 
+
+
 }
 function addSprite(father, img, name, type1, type2) {
     let lastPokemon = father.children[father.children.length - 1]
@@ -68,28 +70,35 @@ button.addEventListener('click', async (event) => {
                 fetchedPokemon.types[0].type.name, fetchedPokemon.types[1].type.name,
             )
         }
+        if (PokemonName.value != '') {
+            alyPokemon.children[0].textContent = 'o pokemon selecionado foi'
+            addBattleDatas(
+                fetchedPokemon.name,
+                fetchedPokemon.sprites.other.dream_world.front_default,
+                fetchedPokemon.stats[0].base_stat,
+                fetchedPokemon.stats[1].base_stat);
 
-    }
-    if (PokemonName.value != '') {
-        alyPokemon.children[0].textContent = 'o pokemon selecionado foi'
-        addBattleDatas(
-            fetchedPokemon.name,
-            fetchedPokemon.sprites.other.dream_world.front_default,
-            fetchedPokemon.stats[0].base_stat,
-            fetchedPokemon.stats[1].base_stat);
+            alyPokemon.children[2].remove()
+            alyPokemon.children[1].remove()
 
-        alyPokemon.children[2].remove()
-        alyPokemon.children[1].remove()
+            let buttonContinue = alyPokemon.appendChild(document.createElement('button'))
+            buttonContinue.textContent = 'continue';
+            buttonContinue.addEventListener('click', () => {
 
-        let buttonContinue = alyPokemon.appendChild(document.createElement('button'))
-        buttonContinue.textContent = 'continue';
-        buttonContinue.addEventListener('click', () => {
+                alyPokemon.classList.add('none')
+                battlefield.classList.remove('none')
+                employAlly()
+                allyHp= selectedPokemon[1].hp*2
+                pokemonsSelected = document.querySelectorAll('.createTeamContainer__pokemon');
 
-            alyPokemon.classList.add('none')
-            battlefield.classList.remove('none')
-            employAlly()
+                pokemonEnemy = pokemonsSelected[2]
+                pokemonEnemy.classList.add('pokemonEnemy')
+                pokemonAlly = pokemonsSelected[3]
+                pokemonAlly.classList.add('pokemonAlly')
 
-        })
+            })
+        }
+
     }
 
 }
